@@ -194,3 +194,5 @@ Il vous est tout à fait possible de combiner les zones circulaires, rectangulai
 Vous pouvez mettre autant de zone que vous voulez dans une carte.
 
 Les adresses destinations comme celles des images ne doivent pas contenir d'antislash (\) mais seulement des slash (/).
+
+fin du cours
