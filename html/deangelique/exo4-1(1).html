@@ -1,0 +1,95 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 3 </title>
+		<style>
+		div.form{margin:15px 0px;}
+		.vide{
+			background-color:red;
+			color:white;
+			font-weight:bold;
+		}
+		#fruits{
+			display:none;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		
+		<form>
+			<div class="form">Nom <input type="text" id="nom" ></div>
+			<div class="form">Prenom <input type="text" id="prenom" ></div>
+			<div class="form"><input type="checkbox" id="ck_frugivore" >Frugivore</div>
+			<div id="fruits" class="form">
+				Fruit prefere 
+				<select id="fruitpref">
+					<option >Pommes</option>
+					<option >Poires</option>
+					<option >Abricots</option>
+				</select>
+			</div>
+			<div class="form"><input type="button" id="bouton" value="Envoyer"></div>
+			
+		</form>
+		
+		<p id="info"></p>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				$('#ck_frugivore').prop('checked', false);
+				$('#ck_frugivore').click(function(){
+					if($('#ck_frugivore').prop('checked')){
+						$('#fruits').fadeIn();
+					}else{
+						$('#fruits').fadeOut();
+					}
+				});
+				
+				$('#bouton').click(function(){
+					if(validation()){
+						var nom       = $('#nom').val();
+						var prenom    = $('#prenom').val();
+						var fruitpref = $('#fruitpref').val();
+						$('#info').text(nom + " " + prenom + ", fruit prefere : " + fruitpref);
+					}else{
+						$('#info').text("");
+					}
+				});
+			}); // #jQuery
+			
+			function validation(){
+				var nom       = $('#nom').val();
+				var prenom    = $('#prenom').val();
+				if(nom != "" && prenom != ""){
+					return true;
+				}else{
+					if(nom == ''){
+						//$('#nom').parent().css('background-color', 'red');
+						/*$('#nom').parent()
+							.css('background-color', 'red')
+							.css('color', 'white')
+							.css('font-weight', 'bold');*/
+						/*$('#nom').parent().css({
+							'background-color':'red',
+							'color':'white',
+							'font-weight':'bold'
+						});*/
+						$('#nom').parent().addClass('vide');
+					}else{
+						$('#nom').parent().removeClass('vide');
+					}
+					if(prenom == ''){
+						$('#prenom').parent().addClass('vide');
+					}else{
+						$('#prenom').parent().removeClass('vide');
+					}
+					return false;
+				}
+			}
+		</script>
+	</body>
+ </html>

@@ -1,0 +1,42 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 3 </title>
+		<style>
+		div.form{margin:15px 0px;}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		
+		<form>
+			<div class="form">Nom <input type="text" id="nom" ></div>
+			<div class="form">Prenom <input type="text" id="prenom" ></div>
+				Fruit prefere 
+				<select id="fruitpref">
+					<option >Pommes</option>
+					<option >Poires</option>
+					<option >Abricots</option>
+				</select>
+			<div class="form"><input type="button" id="bouton" value="Envoyer"></div>
+			
+		</form>
+		
+		<p id="info"></p>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				
+				$('#bouton').click(function(){
+						var nom       = $('#nom').val();
+						var prenom    = $('#prenom').val();
+						var fruitpref = $('#fruitpref').val();
+						$('#info').text(nom + " " + prenom + ", fruit prefere : " + fruitpref);
+				});
+			}); // #jQuery
+		</script>
+	</body>
+ </html>

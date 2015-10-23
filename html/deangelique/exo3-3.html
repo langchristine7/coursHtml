@@ -1,0 +1,57 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 3 </title>
+		<style>
+		.fruits, .fruits-image{
+			float:left;
+			padding-left:30px;
+		}
+		.fruits-image img{
+			width:100px;
+			display:none;
+			position:absolute;
+		}
+		.fruits span{
+			cursor: pointer;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		<div class="fruits">
+			<p><span>Pomme</span></p>
+			<p><span>Poire</span></p>
+			<p><span>Abricot</span></p>
+		</div>
+		<div class="fruits-image">
+			<img src="images/fruits/pomme.jpg" alt="Pomme">
+			<img src="images/fruits/poire.jpg" alt="Poire">
+			<img src="images/fruits/abricot.jpg" alt="Abricot">
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				$('.fruits span').mouseover(function(){
+					var p = $(this).position();
+					var ptop = parseInt(p.top) - 20;
+					var fruit = $(this).text();
+					$('.fruits-image img').each(function(){
+						var alt = $(this).attr('alt');
+						if(fruit == alt){
+							$(this).css("top", ptop);
+							$(this).fadeToggle();
+						}else{
+							$(this).hide();
+						}
+						
+					});
+				});
+			});
+		</script>
+	</body>
+ </html>

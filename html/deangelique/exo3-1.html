@@ -1,0 +1,38 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 3 </title>
+		<style>
+		img{
+			width:100px;
+			display:none;
+		}
+		span{
+			cursor: pointer;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		<div>
+			<p><span>Pomme</span><img src="images/fruits/pomme.jpg"></p>
+			<p><span>Poire</span><img src="images/fruits/poire.jpg"></p>
+			<p><span>Abricot</span><img src="images/fruits/abricot.jpg"></p>
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				$('span').click(function(){
+					$(this).next('img').fadeToggle(); //gère l'appari°/dispari° en ms avec effet
+					//$(this).prev('img').fadeToggle("fast","linear"); 
+					//$(this).parent().next('img').fadeToggle("slow","swing"); 
+					// next(balises après), prev(balises avants),parent (balise mère),children (balises enfants)
+				});
+			});
+		</script>
+	</body>
+ </html>

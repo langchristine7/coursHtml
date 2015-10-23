@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title> Formation HTML/CSS/JS : exo 3 </title>
+  <meta charset="UTF_8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Programmer en Jquery </h1>
+
+<script type="text/javascript">
+//alert("1");
+  $(document).ready(function(){
+      //alert ("ok");
+      //$('h1').hide();
+//alert("ds jquery");
+      var couleur='#55bbee';
+      var n1=5;
+      var n2 = 7;
+      var age = n1 + n2;
+      console.log('J\'ai ' + age + ' ans');
+      console.log('J\'ai ' + (n1+n2) + ' ans');
+      var tab = ['Pommes', 'Poires', 'Abricots', 'kiwi'];
+      console.log(tab.length);
+      console.log(tab[0]);
+      for(i=0;i<tab.length;i++){
+        console.log(tab[i]);
+      $('body').append('<p>Miam miam : ' + tab[i]+'</p>' );
+    }
+
+      $('h1').text('Blabla');
+      $('h1').append('<p>Salut ! Blabla</p>');
+      $('h1').css('color',couleur);
+  });
+
+</script>
+
+</body>
+
+</html>

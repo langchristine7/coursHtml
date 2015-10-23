@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title> Formation HTML/CSS/JS : exo 3 </title>
+  <meta charset="UTF_8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style>
+  img{
+    width:100px;
+    display:none;
+    float:left;
+    /* position:absolute;
+    top:0; */
+}
+  </style>
+</head>
+<body>
+
+<h1>Programmer en Jquery </h1>
+<div class="fruits">
+ <p><span>Pomme</span></p>
+ <p><span>Poire</span></p>
+ <p><span>Abricot</span></p>
+</div>
+<div class="fruits-image">
+ <img src="images/pomme.jpg" alt="Pomme">
+ <img src="images/poire.jpg" alt="Poire">
+ <img src="images/abricot.jpg" alt="Abricot">
+</div>
+
+<script type="text/javascript">
+//alert("1");
+  $(document).ready(function(){
+$('.fruits span').mouseover(function(){
+  //$(this).children('img').css('display','inline');
+  // .children cible les enfants de l'objet en cours
+  // $(this).children('img').fadeToggle(1000);
+  // apparait et disparait lentement
+  // temps en ms en parametre
+  // toutes les fonctions à effet
+  // ont medium slow et fast en paramère prédéfini
+  // $(this).next('img').fadeToggle(1000);
+  // cible le suivant dans la meme hierarchie
+  // $(this).next('img').fadeToggle(1000);
+  // cible le precedent dans la meme hierarchie
+  // $(this).parent().children('img').fadeToggle(1000);
+  // .parent cible le parent
+  var fruit=$(this).text();
+$('.fruits-image img').each(function(){
+  var alt=$(this).attr('alt');
+  if (fruit == alt){
+    $(this).show();
+  }
+  else {
+    $(this).hide();
+  }
+});
+
+});
+  });
+
+</script>
+
+</body>
+
+</html>

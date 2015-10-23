@@ -1,0 +1,46 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 3 </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				
+				var couleur = '#55bbee';
+				var n1 = 5 ;
+				var n2 = 7;
+				var age = n1 + n2;
+				console.log('J\'ai ' + age + ' ans ');
+				console.log('J\'ai ' + (n1+n2) + ' ans ');
+				
+				var tab = ['pomme', 'poire', 'abricot', 'kiwi'];
+				console.log(tab.length);
+				console.log(tab[0]);
+				for(i=0; i<tab.length; i++){
+					console.log(tab[i]);
+					$('body').append('<p>'+tab[i]+'</p>');
+					if(tab[i] == 'abricot'){
+					//	$('body').append('<p class="abricot">Miam miam</p>');
+					}
+				}
+				
+				//alert('changement du h1');
+				$('h1').text('Blablabla');
+				//alert('ajout d\'un texte à la suite du h1');
+				$('h1').append('<p>Salut !</p>');
+				//alert('ajout d\'un texte au début du h1');
+				//$('h1').prepend('<p>Salut !</p>');
+				//alert('change la couleur du h1');
+				$('h1').css('color', couleur);
+				/*alert('cache le h1');
+				$('h1').hide();*/
+			});
+		</script>
+	</body>
+ </html>

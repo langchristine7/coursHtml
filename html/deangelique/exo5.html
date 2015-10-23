@@ -1,0 +1,49 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 5 </title>
+		<style>
+		.reponses{
+			display:none;
+			border: 1px #666 solid;
+			background-color:#ddd;
+		}
+		.questions{
+			border: 1px #666 solid;
+			background-color:#666;
+			color:white;
+			cursor:pointer;
+		}
+		span{
+			display:block;
+			margin:1px 25%;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		
+		<span id=q1 class="questions">question numero 1</span>
+		<span id=r1 class="reponses">reponse 1</span>
+		<span id=q2 class="questions">question numero 2</span>
+		<span id=r2 class="reponses">reponse 2</span>
+		<span id=q3 class="questions">question numero 3</span>
+		<span id=r3 class="reponses">reponse 3</span>
+		<span id=q4 class="questions">question numero 4</span>
+		<span id=r4 class="reponses">reponse 4</span>
+		<span id=q5 class="questions">question numero 5</span>
+		<span id=r5 class="reponses">reponse 5</span>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				$('.questions').click(function(){
+					$(this).next().slideToggle();
+				});
+				
+			}); // #jQuery
+		</script>
+	</body>
+ </html>

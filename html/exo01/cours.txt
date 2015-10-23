@@ -1,0 +1,57 @@
+Dans chrome et firefox, on peut se mettre en affichage comme sur un mobile ou une tablette, icone mobile dans les outils de développement.
+utliser les @media media queries dans le css
+
+
+pour placer des div :
+position relative :
+ utiliser
+ position:relative;
+ left:10%;
+
+site W3C reference du code class
+w3cschools.com
+ex :
+#d2{
+  /*margin-left:5%;*/
+  position:relative;
+  left:10%; /* doit etre utilise obligatoirement avec position */
+          /* la position est relative par rapport à son conteneur. */
+
+}
+
+http://dimsemenov.com/plugins/magnific-popup/
+
+#d2{
+  /*margin-left:5%;*/
+  position:relative;
+  left:-10%; /* doit etre utilise obligatoirement avec position */
+          /* la position est relative par rapport à son conteneur. */
+}
+
+valeur négative pour aller dans l'autre sens
+
+jquery
+<p>Pomme<img src="images/pomme.jpg"></p>
+
+$('p').click(function(){
+  //$(this).children('img').css('display','inline');
+  $(this).children('img').fadeToggle(1000);
+  // apparait et disparait lentement
+  // temps en ms en parametre
+  // toutes les fonctions à effet
+  // ont medium slow et fast en paramère prédéfini
+
+  $('.fruits span').click(function(){
+    //$(this).children('img').css('display','inline');
+    // .children cible les enfants de l'objet en cours
+    // $(this).children('img').fadeToggle(1000);
+    // apparait et disparait lentement
+    // temps en ms en parametre
+    // toutes les fonctions à effet
+    // ont medium slow et fast en paramère prédéfini
+    $(this).next('img').fadeToggle(1000);
+    // cible le suivant dans la meme hierarchie
+
+    $(this).prev('img').fadeToggle(1000);
+    // cible le precedent dans la meme hierarchie
+    

@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta charset="UTF_8">
+<style>
+body{
+  margin:0;
+  padding:0;
+}
+div{
+  background-color:#666;
+  margin:4px;
+  border:1px black solid;
+  width:25%;
+  overflow:hidden;
+  /* hidden : cache le contenu quand il dépasse de la taille specifiee */
+  /* auto =>  genere scrolling
+  bar lorsque le contenue excède la hauteur specifiée */
+}
+
+div#d{
+  position:relative;
+  left:30%;
+  top:30%;
+}
+
+div div {
+  width:100%;
+}
+#d2{
+  /*margin-left:5%;*/
+  position:relative;
+  left:-10%; /* doit etre utilise obligatoirement avec position */
+          /* la position est relative par rapport à son conteneur. */
+}
+
+div#d{
+  position:absolute;
+  left:30%;
+  top:30%;
+}
+
+div#di{width:100%;}
+div#di div{
+  width:30%;
+  float:right;
+}
+
+</style>
+</head>
+<body>
+  <div id="d">
+   <div id="d1">DIV1</div>
+   <div id="d2">DIV2</div>
+   <div id="d3">DIV3</div>
+  </div>
+  <div id="di">
+   <div id="d4">DIV4</div>
+   <div id="d5">DIV5</div>
+   <div id="d6">DIV6</div>
+  </div>
+</body>
+
+</html>

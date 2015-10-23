@@ -1,0 +1,58 @@
+/*------------------------------------------------
+Styles du portfolio d'Amy MacAdams
+
+tables des matieres
+
+	- Contenu general
+	- Typographie
+	- Entete et navigation
+	- Images et medias
+	- Pied de page (footer)
+	- Media queries
+
+*/
+
+
+/* Contenu general
+-------------------------------------------------*/
+
+
+
+/* Typographie
+-------------------------------------------------*/
+body{
+	font-family: 'Abel', sans-serif;
+	font-size:1.5em;
+	color:white;
+}
+
+
+/* Entete et navigation
+-------------------------------------------------*/
+header{
+	background-color:#7ACCC8;
+	padding:5em;
+	text-align: center;
+}
+
+#logo{
+	font-size:3em;
+	border: 1px white solid;
+	width:48%;
+	margin:0 auto; /* 0 : marge de haut et bas, auto : marge de gauche et droite */
+}
+
+
+/* Images et medias
+-------------------------------------------------*/
+
+
+
+/* Pied de page (footer)
+-------------------------------------------------*/
+
+
+
+/* Media queries
+-------------------------------------------------*/
+

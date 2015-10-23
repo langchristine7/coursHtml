@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title> Formation HTML/CSS/JS : exo 4 </title>
+  <meta charset="UTF_8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+
+<h1></h1>
+<div class="fruits">
+
+  <form>
+    First name: <input id="fname" type="text" name="fname"><br>
+    Last name: <input id="lname" type="text" name="lname"><br>
+    <input type="button" value="Valider" onclick="afficher();">
+  </form>
+  <div id="texteSaisi">
+
+</div>
+
+
+
+<script type="text/javascript">
+//alert("1");
+function afficher()
+{
+  $('#texteSaisi').val()=$('#lname').val()+ " "+$('#fname').val()
+}
+
+  $(document).ready(function(){
+
+
+  });
+
+</script>
+
+</body>
+
+</html>

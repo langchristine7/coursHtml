@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <!-- commentaire html -->
+  <title> Introduction à l'html</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+  /* commentaire css */
+  p{
+    margin: 0 15px 40px 15px;  /* top right bottom left */
+    margin-bottom:100px;
+    color:#5e44aa;
+  }
+
+  ul { /* prioritaire par rapport au fichier link stytlesheet */
+    color:grey;
+  }
+
+  .pic{
+      width: 150px;
+    }
+
+  img {
+  /*  width:75px;*/
+    /*height:50px;*/
+    margin : auto;
+  }
+
+#galerie{ /*ce qui correspond a id="galerie" */
+
+  background-color: green;
+}
+
+#galerie img {border:1pc #aaa dotted}  /* largeur du trait, couleur, pointille(forme du trait) */
+
+.box {
+  border:4px red solid;
+  padding:10px;
+  text-align:justify;
+  font-size: 20px;
+  /*
+  font-family: cursive;
+  */
+  font-family: :Arial, Verdana, serif;
+  font-weight: 600;  /* bold */
+  font-style:italic;
+  /*  le souligne est plutot utilise pour les liens²
+  text-decoration: underline;
+  */
+}
+  </style>
+</head>
+<body>
+
+<div id="galerie">
+  <img class="pic" src="images/chat-mignon.jpg" alt="Photo d'un loup en pleine prédation">
+  <img class="pic" src="images/chat-mignon.jpg" alt="Photo d'un loup en pleine prédation" >
+  <img class="pic" src="images/chat-mignon.jpg" alt="Photo d'un loup en pleine prédation" >
+</div>
+  <img src="images/chat-mignon.jpg" alt="Photo d'un loup en pleine prédation">
+  <img src="images/chat-mignon.jpg" alt="Photo d'un loup en pleine prédation" >
+  <img src="images/chat-mignon.jpg" alt="Photo d'un loup en pleine prédation" >
+
+
+<ul>
+  <!-- alt est pour l'accessiblilité afficher le texte si l'image n'est pas présente -->
+
+
+  <li style="margin-bottom:20px">
+    Pommes
+  </li>
+  <li>
+    Poires
+  </li>
+  </ul>
+<p class="box" style="color:green;" >
+  <a href="http://lipsum.com" target="_blank">Lorem ipsum </a>dolor sit amet, consectetur adipiscing elit. Ut ut velit dignissim, placerat lorem quis, luctus lectus. Vivamus eu velit est. Nam imperdiet tortor id felis porttitor volutpat. Sed posuere pharetra elementum. Cras elit ipsum, congue id ornare sed, vestibulum in dolor. Nulla sed orci sed lectus blandit volutpat nec eget ex. Nunc tempus eros quis ex vulputate, at rhoncus enim aliquet. Curabitur convallis posuere purus, nec iaculis dolor mollis non. Proin porttitor erat lectus, sit amet sagittis ex euismod in. Aliquam lorem ipsum, semper at orci in, imperdiet consectetur lorem. Integer vulputate quam at nulla convallis condimentum. Vestibulum a tincidunt arcu, ut pellentesque neque.
+<p>
+Nam volutpat blandit dolor, eu malesuada velit. Curabitur vel semper quam. Vivamus vestibulum dui diam, eu egestas risus sodales volutpat. Vivamus porta ex eget mi fringilla malesuada. Morbi vulputate, ex in mollis fermentum, sapien risus ullamcorper ante, imperdiet laoreet ipsum sapien in ligula. Proin rhoncus vulputate arcu vitae iaculis. Nullam tempus laoreet diam, quis euismod tortor lacinia a. Curabitur semper massa malesuada ultricies blandit. Vestibulum posuere purus lorem. Nunc quis pulvinar felis. Aliquam tincidunt quam leo, vitae vulputate nunc hendrerit sed. Nullam viverra ipsum nisl, eu accumsan felis dignissim bibendum. Maecenas imperdiet sem a orci laoreet, eget luctus velit interdum. Aenean id orci at erat vulputate varius.
+<p>
+Morbi eros arcu, interdum mollis odio quis, laoreet lacinia sapien. Praesent pellentesque convallis nibh, eget luctus arcu imperdiet sed. Curabitur aliquam porttitor ante, porttitor ultricies velit aliquet eget. Morbi rhoncus neque dui, et bibendum purus finibus eget. Duis vestibulum diam feugiat orci tempus mollis. Aliquam scelerisque justo turpis, ac mollis magna ultrices nec. Quisque ipsum enim, gravida a sollicitudin quis, porta eget mauris. Etiam ut est in turpis malesuada tempus. Etiam id eleifend nunc, vitae ornare lectus. Sed ornare est quis turpis aliquam, sit amet consequat enim blandit. Sed nec vulputate urna, quis cursus neque. Morbi aliquet pretium arcu, rutrum porttitor ante ultrices nec. Maecenas maximus ut dolor ac euismod. Pellentesque id ipsum sit amet metus vestibulum luctus. In odio velit, condimentum at est sollicitudin, viverra consequat nibh.
+<p>
+Maecenas ultrices est eget metus feugiat feugiat. Etiam vel justo at mi rhoncus varius vel nec nunc. Morbi gravida justo et neque porta dapibus. Curabitur eu enim vel ex bibendum rutrum. Integer at nulla libero. Mauris quis elit aliquam sem condimentum viverra eget nec purus. Fusce a ultricies augue. Suspendisse iaculis lectus non hendrerit pretium. Maecenas tempor pretium dui eget finibus. Donec facilisis condimentum nisl, et blandit justo efficitur vitae. Aliquam iaculis efficitur tortor eu egestas. Proin vitae erat et nulla lacinia varius vitae eu justo. Vivamus aliquet felis eros, sed sollicitudin velit commodo a. Donec mattis sem enim, non mattis arcu ultricies nec. Nam tristique neque nec accumsan fringilla. Praesent eget metus et elit bibendum bibendum.
+
+Phasellus dui ligula, porta et tortor non, mollis sodales neque. Sed sit amet metus in enim ultrices maximus. Duis sagittis viverra consectetur. Pellentesque fringilla ultricies felis id ullamcorper. Duis ornare, lectus quis pharetra lobortis, mi orci sodales lacus, eget accumsan ligula metus et lectus. Nullam a tincidunt elit. Maecenas vitae eleifend metus. Suspendisse quam neque, elementum id orci ac, elementum dignissim massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ac nisi et velit suscipit posuere vel eget neque. Nulla facilisi.
+
+
+</body>
+</html>
