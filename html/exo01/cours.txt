@@ -55,3 +55,142 @@ $('p').click(function(){
     $(this).prev('img').fadeToggle(1000);
     // cible le precedent dans la meme hierarchie
     
+http://cyberzoide.developpez.com/html/map.php3
+
+V. Images et zones réactives
+
+Par Hugo ETIEVANT
+
+Qu'est-ce qu'une carte (i.e. zone réactive) ?
+Les images
+Les cartes
+Les zones
+Prévisualisation 
+Encore plus...
+Qu'est-ce qu'une carte ?
+
+La balise <MAP> (=carte en français) sert à définit des zones réactives sur une seule image afin d'insérer des liens sur une même surface. Elle permet à partir d'une seule image de proposer un panel de différentes destinations internes comme externes. Elle est utile pour les bandeaux publicitaires mais aussi et surtout pour les menus graphiques. Son utilisation est conditionnée à la présence d'images avec la balise <IMG>.
+
+Les images
+
+On insert une image dans une page HTML avec la balise <IMG> dont les attributs sont NAME : le nom de l'image (nécessaire pour le JavaScript) SRC : l'adresse (relative ou absolue) de l'image, WIDTH : sa largeur en pixels ou en pourcentage, HEIGHT : sa hauteur en pixels ou en pourcentage, BORDER : son éventuelle bordure en pixels (=2 par défaut lors d'un lien, sinon 0), ALT : un commentaire placé dans le cadre en attendant son chargement et contitutif d'une bulle lors du passage de la souris, ALIGN : alignement, HSPACE : marge horizontale entre l'image et les autres éléments (texte, image...) en pixels, VSPACE : marge verticale en pixels, USEMAP : spécifie le nom de la carte à utiliser sur l'image.
+
+Si les dimensions de l'image ne sont pas spécifiées, le navigateur les déterminent automatiquement une fois l'image chargée, c'est-à-dire que si le chargement d'une page est très long, comme le navigateur aura affiché le texte avant l'image, il devra refaire la mise en page une fois qu'il connaîtra ses dimensions.
+
+Les attributs d'alignement sont les suivants : LEFT : aligné à gauche (du texte...), RIGHT : alignée à droite, TOP : alignée en haut, MIDDLE : alignée au milieu, BOTTOM : alignée en bas, BASELINE : basée sur la ligne, TEXTTOP : le texte est aligné en haut, ABSMIDDLE : l'image est centrée au milieu de l'axe du texte, ABSBOTTOM : l'image est centrée sur la base du texte.
+
+Syntaxe :
+
+<IMG SRC="adresse_de_l'image" NAME="nom_de_l'image" WIDTH="largeur" HEIGHT="hauteur" ALT="commentaire" BORDER="épaisseur_de_la_bordure" ALIGN="alignement" HSPACE="marge_horizonale" VSPACE="marge_verticale" USEMAP="#nom_de_la_carte">.
+
+Exemple :
+
+Le point sur les balises HTML
+<IMG SRC="images/logo.gif NAME="logo-html" WIDTH=161 HEIGHT=68 ALT="Le point sur les balises HTML" BORDER=1 ALIGN="right" HSPACE=20>
+
+Note : 
+Le seul attribut obligatoire est SRC, tous les autres sont optionnels.
+
+Les cartes
+
+Vous avez pu constater que la balise <IMG> réserve l'un de ses attributs au nom d'une carte (<MAP>) dont la balise correspondant au nom spécifié dans USEMAP contient toutes les infos concernant les zones réactives (sensibles à la souris et pointant vers une destination interne ou externe).
+
+Donc après avoir écrit votre balise <IMG> qui fait référence à une carte, il faut créer proprement dit — grace au conteneur <MAP> — les différentes zones de la carte à partir de leur coordonnées sur l'image. Une même carte peut théoriquement être appelée par plusieurs images différentes, mais dans la pratique il est fort peu probable que vous utilisez deux images dont les zones soient identiques. A noter que la carte peut être écrite avant ou après l'image qui l'appelle, le principal c'est qu'elles soient toutes deux assez proche dans votre code pour qu'un temps de chargement très long de votre page ne soit pas pénalisant.
+
+Le conteneur <MAP> a pour seul attribut NAME : nom de la carte. Ce conteneur contient autant de balises <AREA> qu'il y a de zones réactives.
+
+Syntaxe :
+
+<MAP NAME="nom_de_la_carte">
+
+différentes balises <AREA>...
+
+</MAP>
+
+Les zones
+
+A une zone réactive est associée une balise <AREA> dont les attributs sont NAME : le nom de la zone, SHAPE : le type de zone (cercle, rectangle ou polygone), COORDS : les coordonnées de la zone (séparées par des virgules), HREF : l'adresse destination, ALT : le commentaire qui apparaitra lorsque le curseur de la souris passera sur la zone.
+
+Syntaxe :
+
+<AREA NAME="nom_de_la_zone" SHAPE="type_de_zone" COORDS="coordonnées" HREF="adresse_destination" ALT="commentaire">
+
+Zone circulaire
+
+Une zone circulaire est définie par la balise <AREA SHAPE="circle"> et dont l'attribut COORDS prend pour valeurs la liste des abscisse, ordonnée à l'origine du centre et le rayon du cercle.
+
+Syntaxe :
+
+<AREA SHAPE="circle" COORDS="x,y,rayon" HREF="destination">
+
+Exemple :
+
+<MAP NAME="bulles">
+<AREA SHAPE="circle" COORDS="50,50,40" HREF="#bulles">
+</MAP>
+<IMG SRC="images/map1.gif" WIDTH=180 HEIGHT=100 BORDER=0 USEMAP="#bulles">
+
+ 
+Zone rectangulaire
+
+Une zone rectangulaire est définie par la balise <AREA SHAPE="rect"> et dont l'attribut COORDS prend pour valeurs les coordonnées des coins supérieur gauche et inférieur droit séparées par des virgules.
+
+Syntaxe :
+
+<AREA SHAPE="rect" COORDS="x1,y1,x2,y2" HREF="destination">
+
+Exemple :
+
+<MAP NAME="menu">
+<AREA SHAPE="rect" COORDS="10,3,60,16" HREF="#home">
+<AREA SHAPE="rect" COORDS="10,16,60,30" HREF="#edito">
+<AREA SHAPE="rect" COORDS="10,30,60,43" HREF="#links">
+<AREA SHAPE="rect" COORDS="10,43,60,57" HREF="#mail">
+</MAP>
+<IMG SRC="images/map2.gif" WIDTH=70 HEIGHT=60 BORDER=0 USEMAP="#menu">
+
+ 
+Zone polygonale
+
+Une zone polygonale est définie par la balise <AREA SHAPE="poly"> et dont l'attribut COORDS prend pour valeurs la liste des abscisse et ordonnée à l'origine de chacun des points.
+
+Syntaxe :
+
+<AREA SHAPE="poly" COORDS="x1,y1,x2,y2,x3,y3,x4,y4,...x27,y27,x1,y1" HREF="destination">
+
+Exemple :
+
+<MAP NAME="eux">
+<AREA SHAPE="poly" COORDS="0,0,34,0,78,20,
+43,33,46,69,19,54,0,78,0,0" HREF="#moi">
+<AREA SHAPE="poly" COORDS="34,0,78,20,43,33,
+46,69,19,54,0,78,0,93,91,93,123,76,98,49,147,34,131,0,34,0" HREF="#toi">
+<AREA SHAPE="poly" COORDS="131,0,200,0,200,
+94,91,93,123,76,98,49,147,34,131,0" HREF="#nous">
+</MAP>
+<IMG SRC="images/map3.gif" WIDTH=200 HEIGHT=94 BORDER=0 USEMAP="#eux">
+
+ 
+Prévisualisation 
+
+Si vous voulez afficher une image particulièrement volumineuse qui, par conséquent, va mettre beaucoup de temps à s'afficher, il est possible de spécifier en valeur à l'attribut LOWSRC une autre images (en fait la même mais un fichier différent) beaucoup plus légère car compressé ou avec énormément moins de couleurs.
+
+Exemple :
+
+<IMG SCR="veranda.jpg" WIDTH=200 HEIGHT=150 LOWSRC="verandamini.gif" ALT="Ma belle vérenda!">
+Dans cet exemple, vous avez une image JPEG de 200 Ko à afficher mais comme vous savez que cela prendra longtemps à afficher : vous spécifiez une autre image de 15 Ko (en 32 couleurs) à afficher en attendant que l'originale soit totalement chargée.
+
+Différentes méthodes pour limiter la taille d'une image :
+
+diminuer la taille de l'image
+diminuer le nombre de couleurs
+augmenter la compression (JPEG)
+Ici, l'image de prévisualisation peut être de taille différente de l'originale, être d'un autre format, etc...
+
+Encore plus...
+
+Il vous est tout à fait possible de combiner les zones circulaires, rectangulaires et polygonales au sein d'une seule et même carte.
+
+Vous pouvez mettre autant de zone que vous voulez dans une carte.
+
+Les adresses destinations comme celles des images ne doivent pas contenir d'antislash (\) mais seulement des slash (/).

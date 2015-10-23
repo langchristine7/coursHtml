@@ -1,0 +1,104 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 3 </title>
+		<style>
+		div.form{margin:15px 0px;}
+		.vide{
+			background-color:red;
+			color:white;
+			font-weight:bold;
+		}
+		#fruitpref{
+			display:none;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		
+		<form>
+			<div class="form">Nom <input type="text" id="nom" ></div>
+			<div class="form">Prenom <input type="text" id="prenom" ></div>
+			<div class="form"><input type="checkbox" id="ck_frugivore" >Frugivore</div>
+			<div id="fruitpref" class="form">
+				Fruit prefere 
+				<select id="fruits">
+				</select>
+			</div>
+			<div class="form"><input type="button" id="bouton" value="Envoyer"></div>
+			
+		</form>
+		
+		<p id="info"></p>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// code jQuery
+				$('#nom').val("");
+				$('#prenom').val("");
+				$('#ck_frugivore').prop('checked', false);
+				
+				$('#bouton').click(function(){
+					if(validation()){
+						var nom       = $('#nom').val();
+						var prenom    = $('#prenom').val();
+						var calorie = $('#fruits option:selected').val();
+						var fruit = $('#fruits option:selected').text();
+						$('#info').text(nom + " " + prenom + ", fruit prefere : " + fruit + " ("+calorie+")");
+					}else{
+						$('#info').text("");
+					}
+				});
+				
+				$('#ck_frugivore').click(function(){
+					if($('#fruitpref select option').length == 0){
+						var url = 'http://opusidea.net/formation/jquery/getFruits.php';
+						$.ajax({
+							type : 'get',
+							dataType : 'json',
+							url : url,
+							success : function(data){
+								alimenteListeFruits(data);
+							},
+							error : function(xhr, ajaxOptions, thrownError){
+								console.log(xhr.status);// état de la requete (code);
+								console.log(thrownError); 
+							}
+						});
+					}
+					$('#fruitpref').fadeToggle();
+				});
+			}); // #jQuery
+			
+			function validation(){
+				var nom       = $('#nom').val();
+				var prenom    = $('#prenom').val();
+				if(nom != "" && prenom != ""){
+					return true;
+				}else{
+					if(nom == ''){
+						$('#nom').parent().addClass('vide');
+					}else{
+						$('#nom').parent().removeClass('vide');
+					}
+					if(prenom == ''){
+						$('#prenom').parent().addClass('vide');
+					}else{
+						$('#prenom').parent().removeClass('vide');
+					}
+					return false;
+				}
+			}
+				
+			function alimenteListeFruits(datasource){
+				fruits = datasource;
+				for(i=0;i<fruits.length;i++){
+					$('#fruitpref select').append('<option value="'+ fruits[i].Calorie+'">'+fruits[i].Nom + '</option>');
+				}
+			}
+		</script>
+	</body>
+ </html>
