@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title> Programme de formation </title>
+  <meta description="Gestion du programme de formation">
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width"/> -->
+  <!-- feuille de style -->
+  <!-- l'ordre est important,
+       le dernier peut cacher des definitions precedentes -->
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/skeleton.css"/>
+  <link rel="stylesheet" href="css/font-awesome.css"/>
+  <!-- copie a partir du site dimsemenov.com -->
+  <link rel="stylesheet" href="css/magnific-popup.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+
+
+
+<!-- fonts google -->
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+<!-- Font awesome -->
+
+<!-- favicon -->
+<link rel="icon" href="images/favicon.png">
+
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/magnific-popup.js"></script>
+</head>
+<body>
+  <header>
+    <div id="logo"><a href="./index.html">Formation Poec Java</a></div>
+  </header>
+  <div class="container portfolio">
+    <div class="row">
+      <div class="four columns">
+        <a class="image-link" href="images/backpacker.jpg"><img src="images/backpacker.jpg" alt="mec qui marche"></a>
+      </div>
+      <div class="four columns">
+        <a class="image-link" href="images/desert_cycle.jpg"><img src="images/desert_cycle.jpg" alt="couple sur une moto"></a>
+      </div>
+      <div class="four columns">
+        <a class="image-link" href="images/italy_bikes.jpg"><img src="images/italy_bikes.jpg" alt="couple a velo"></a>
+      </div>
+    </div>
+
+       <div class="row">
+          <div class="four columns">
+            <a class="image-link" href="images/on_safari.jpg"><img src="images/on_safari.jpg" alt="couple en safari"  ></img></a>
+          </div>
+          <div class="four columns">
+            <a class="image-link" href="images/overlook_mtn.jpg"><img src="images/overlook_mtn.jpg" alt="nana en thailand"  ></img></a>
+          </div>
+          <div class="four columns">
+            <a class="image-link" href="images/paris_couple.jpg"><img src="images/paris_couple.jpg" alt="couple a paris"  ></img></a>
+          </div>
+        </div> <!-- fin row -->
+
+        <div class="row">
+          <div class="four columns">
+            <a class="image-link" href="images/single_rider.jpg"><img src="images/single_rider.jpg" alt="nana sur un bateau"  ></img></a>
+          </div>
+          <div class="four columns">
+            <a class="image-link" href="images/sunset_beach.jpg"><img src="images/sunset_beach.jpg" alt="nana sur un hamac"  ></img></a>
+          </div>
+          <div class="four columns">
+            <a class="image-link" href="images/toes_sand.jpg"><img src="images/toes_sand.jpg" alt="pieds sur le sable"  ></img></a>
+          </div>
+      </div> <!-- ligne 3 -->
+  </div> <!-- fin 1er container-->
+  <div class="row bio">
+    <div class="container">
+      <div class="four columns">
+        <img class="amy" src="images/amyCoupee.jpg" alt="Amy">
+      </div>
+      <div class="eight columns">
+        <h2> About Amy MacAdams</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut velit dignissim, placerat lorem quis, luctus lectus. Vivamus eu velit est. Nam imperdiet tortor id felis porttitor volutpat. Sed posuere pharetra elementum. Cras elit ipsum, congue id ornare sed, vestibulum in dolor. Nulla sed orci sed lectus blandit volutpat nec eget ex. Nunc tempus eros quis ex vulputate, at rhoncus enim aliquet. Curabitur convallis posuere purus, nec iaculis dolor mollis non. Proin porttitor erat lectus, sit amet sagittis ex euismod in. Aliquam lorem ipsum, semper at orci in, imperdiet consectetur lorem. Integer vulputate quam at nulla convallis condimentum. Vestibulum a tincidunt arcu, ut pellentesque neque.
+      </div>
+    </div> <!-- fin container bandeau amy -->
+  </div>
+
+  <footer>
+  <div class="container">
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social">
+        <li class="facebook"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+        <li class="twitter"><a href="#"><i class="fa fa-twitter-square "></i></a></li>
+        <li class="instagram"><a href="#"><i class="fa fa-instagram "></i></a></li>
+        <li class="flickr"><a href="#"><i class="fa fa-flickr "></i></a></li>
+        <li class="youtube"><a href="#"><i class="fa fa-youtube-square "></i></a></li>
+        <li class="linkedin"><a href="http://linkedin.com"><i class="fa fa-linkedin-square "></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve rows">
+<p>&#9400; 2015 Christine Lang. Programme de formation. All rights reserved.</p>
+    </div>
+  </div>
+</div> <!-- fin container icones -->
+</footer>
+<script type="text/javascript">
+$(document).ready(function(){
+//  alert("ok");
+//  $('.image-link').magnificPopup({type:'image'});
+// Initialize popup as usual
+$('.image-link').magnificPopup({
+  type: 'image',
+  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+  zoom: {
+    enabled: true, // By default it's false, so don't forget to enable it
+
+    duration: 300, // duration of the effect, in milliseconds
+    easing: 'ease-in-out', // CSS transition easing function
+
+    // The "opener" function should return the element from which popup will be zoomed in
+    // and to which popup will be scaled down
+    // By defailt it looks for an image tag:
+    opener: function(openerElement) {
+      // openerElement is the element on which popup was initialized, in this case its <a> tag
+      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+      return openerElement.is('img') ? openerElement : openerElement.find('img');
+    }
+  }
+
+});
+});
+</script>
+</body>
+</html>
