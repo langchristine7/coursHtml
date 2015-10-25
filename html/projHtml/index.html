@@ -4,7 +4,7 @@
   <title> Programme de formation </title>
   <meta description="Programme de formation POEC JAVA">
   <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width"/> -->
+  <meta name="viewport" content="width=device-width"/>
   <!-- feuille de style -->
   <!-- l'ordre est important,
        le dernier peut cacher des definitions precedentes -->
@@ -33,7 +33,7 @@
 </head>
 <body>
   <header>
-    <div id="logo"><a href="./index.html">Formation Poec Java</a></div>
+    <div id="logo"><a href="./index.html">Formation Java</a></div>
   </header>
   <div class="container div_choix_date">
     <div class="row">
@@ -178,16 +178,16 @@ $('.image-link').magnificPopup({
 
 });
 
-  // initialisation
-
-  $('#titre_mois').text($("#mois option:selected").text());
-
   // action changment de mois
   $('#mois').change (function() {
-    $('#titre_mois').text($("#mois option:selected").text());
-    affiche_mois(this.value);
+    //$('#titre_mois').text($("#mois option:selected").text());
+    affiche_mois();
   });
-});
+  
+  // initialisation
+	affiche_mois();
+  //$('#titre_mois').text($("#mois option:selected").text());
+  });
 </script>
 </body>
 </html>

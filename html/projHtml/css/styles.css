@@ -17,6 +17,11 @@ Tables des matières
   margin-top:4%;
   padding:3% 0 2% 0;
 }
+
+.jourSem0 {
+background-color: black;
+}
+
 /* Typographie
 --------------------------------------------------- */
 body {
@@ -37,6 +42,7 @@ a{
   text-align:center;
   }
 
+  
 /* Entête et navigation
 --------------------------------------------------- */
 header{
@@ -47,7 +53,7 @@ header{
 }
 
 #logo{
-	font-size:2em;
+	font-size:3em;
 	margin:0 auto; /* 0 : marge de haut et bas, auto : marge de gauche et droite */
 }
 #logo a{
@@ -111,7 +117,7 @@ on réduit l'affichage en conséquence */
   }
 */
 #logo a{
-    font-size:2em;
+    font-size:1em;
   }
 
 ul.social li{
