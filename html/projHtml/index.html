@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/styles.css"/>
 
 
-
 <!-- fonts google -->
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
@@ -28,24 +27,59 @@
 <!-- script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/magnific-popup.js"></script>
+<script type="text/javascript" src="js/programme_poec.js"></script>
+<script type="text/javascript" src="js/cree_mois.js"></script>
+
 </head>
 <body>
   <header>
     <div id="logo"><a href="./index.html">Formation Poec Java</a></div>
   </header>
-  <div class="container choix_date">
+  <div class="container div_choix_date">
     <div class="row">
         <div class="twelve columns">
-          <select id"mois">
-            <option value="09">Septembre 2015</option>
-            <option value="10">Octobre 2015</option>
-            <option value="11">Novembre 2015</option>
-            <option value="12">Décembre 2015</option>
+          <select id="mois">
+            <option value=9 select="selected">Septembre 2015</option>
+            <option value=10>Octobre 2015</option>
+            <option value=11>Novembre 2015</option>
+            <option value=12>Décembre 2015</option>
           </select>
         </div>
     </div>
-  </div> <!-- container choix_date" -->
-  
+  </div> <!-- container div_choix_date" -->
+  <div>
+<div class="container div_mois">
+  <div class="row">
+    <div class="twelve columns">
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <!--<th></th>
+            <th></th>-->
+            <th id="titre_mois" colspan=4 style="text-align:center">Mois 2015</th>
+            <!--<th></th>-->
+          </tr>
+        </thead>
+        <tbody id="tab_mois">
+          <!--
+          <tr>
+            <td>D</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>2</td>
+            <td>Java Jee</td>
+            <td>Renaud</td>
+          </tr>
+        -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> <!-- container div_mois" -->
 
   <div class="container portfolio">
     <div class="row">
@@ -143,6 +177,16 @@ $('.image-link').magnificPopup({
   }
 
 });
+
+  // initialisation
+
+  $('#titre_mois').text($("#mois option:selected").text());
+
+  // action changment de mois
+  $('#mois').change (function() {
+    $('#titre_mois').text($("#mois option:selected").text());
+    affiche_mois(this.value);
+  });
 });
 </script>
 </body>

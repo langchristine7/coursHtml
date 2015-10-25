@@ -1,6 +1,6 @@
 COURS HTML CSS JAVASCRIPT
 OCTOBRE 2015
-POEC JAVA - cours de christophe 
+POEC JAVA - cours de christophe
 
 
 Dans chrome et firefox, on peut se mettre en affichage comme sur un mobile ou une tablette, icone mobile dans les outils de développement.
@@ -59,8 +59,15 @@ $('p').click(function(){
 
     $(this).prev('img').fadeToggle(1000);
     // cible le precedent dans la meme hierarchie
-    
+
 http://cyberzoide.developpez.com/html/map.php3
+
+
+https://www.google.com/fusiontables/data?docid=1GA4JDPI0QfUi4IfqOHDewV6CeO7tI6RZJan0FkU5
+
+key=AIzaSyCq5D5wZpzos9U-aAJXYboqvwufV3_G9hI
+
+
 
 V. Images et zones réactives
 
@@ -70,7 +77,7 @@ Qu'est-ce qu'une carte (i.e. zone réactive) ?
 Les images
 Les cartes
 Les zones
-Prévisualisation 
+Prévisualisation
 Encore plus...
 Qu'est-ce qu'une carte ?
 
@@ -93,7 +100,7 @@ Exemple :
 Le point sur les balises HTML
 <IMG SRC="images/logo.gif NAME="logo-html" WIDTH=161 HEIGHT=68 ALT="Le point sur les balises HTML" BORDER=1 ALIGN="right" HSPACE=20>
 
-Note : 
+Note :
 Le seul attribut obligatoire est SRC, tous les autres sont optionnels.
 
 Les cartes
@@ -135,7 +142,7 @@ Exemple :
 </MAP>
 <IMG SRC="images/map1.gif" WIDTH=180 HEIGHT=100 BORDER=0 USEMAP="#bulles">
 
- 
+
 Zone rectangulaire
 
 Une zone rectangulaire est définie par la balise <AREA SHAPE="rect"> et dont l'attribut COORDS prend pour valeurs les coordonnées des coins supérieur gauche et inférieur droit séparées par des virgules.
@@ -154,7 +161,7 @@ Exemple :
 </MAP>
 <IMG SRC="images/map2.gif" WIDTH=70 HEIGHT=60 BORDER=0 USEMAP="#menu">
 
- 
+
 Zone polygonale
 
 Une zone polygonale est définie par la balise <AREA SHAPE="poly"> et dont l'attribut COORDS prend pour valeurs la liste des abscisse et ordonnée à l'origine de chacun des points.
@@ -175,8 +182,8 @@ Exemple :
 </MAP>
 <IMG SRC="images/map3.gif" WIDTH=200 HEIGHT=94 BORDER=0 USEMAP="#eux">
 
- 
-Prévisualisation 
+
+Prévisualisation
 
 Si vous voulez afficher une image particulièrement volumineuse qui, par conséquent, va mettre beaucoup de temps à s'afficher, il est possible de spécifier en valeur à l'attribut LOWSRC une autre images (en fait la même mais un fichier différent) beaucoup plus légère car compressé ou avec énormément moins de couleurs.
 
