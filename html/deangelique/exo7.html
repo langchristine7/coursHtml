@@ -1,0 +1,118 @@
+ <!doctype html>
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8"> <!-- UTF-8 pour IE sinon peut importe la casse -->
+		<title>Formation HTML/CSS/JS : exo 5 </title>
+		<style>
+		#carte{
+			background: url('images/eu-map.png') white no-repeat 0px 0px; 
+			/*url image, couleur de fond répétition, [attachement (scroll, fixed)], position : gauche haut*/
+			width: 795px;
+			height: 625px;
+		}
+		
+		#carte a{
+			position: absolute;
+			display: block;
+			color : white;
+			background-color: black;
+			padding: 2px;
+			font-size: 0.8em;
+			text-decoration: none;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Programmer en jQuery</h1>
+		<input type="button" value="Masquer les pays" id="btn_affichage">
+		<input type="button" value="English" id="btn_traduction">
+	
+		<div id="carte">
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//code jQuery
+				affichage = true;
+				pays = [];
+				lang = 'fr'; //langue par defaut
+				
+				var url   = "https://www.googleapis.com/fusiontables/v2/query?sql=";
+				var select   = "SELECT * "; 
+				//select = "SELECT NomFR "; 
+				var table = "FROM 1GA4JDPI0QfUi4IfqOHDewV6CeO7tI6RZJan0FkU5 ";
+				var condition   = ""; //"WHERE NomEN = 'Cyprus'"; 
+				var sql  = select + table + condition; 
+				var key   = "AIzaSyCq5D5wZpzos9U-aAJXYboqvwufV3_G9hI";
+				
+				url += sql + "&key=" + key;
+			
+				$.ajax({
+					type : 'get',
+					dataType : 'json',
+					//async:true,
+					url : url,
+					success : function(data){
+						pays = data.rows
+						alimenteCarte(pays, lang);
+					},
+					error : function(xhr, ajaxOptions, thrownError){
+						console.log(xhr.status);// état de la requete (code);
+						console.log(thrownError); 
+					}
+				});
+			}); //fin jQuery
+			
+			$('#btn_affichage').click(function(){
+				//code jQuery
+				$('#carte a').fadeToggle();	
+				if(affichage){
+					$(this).val('Afficher les pays');
+					affichage = true;
+				}else{
+					$(this).val('Masquer les pays');
+					affichage = false;
+				}				
+			}); //fin jQuery
+			
+			$('#btn_traduction').click(function(){
+				//code jQuery
+				if(lang == 'fr'){
+					lang = 'en';
+					$(this).val('Francais');
+				}else{
+					lang = 'fr';
+					$(this).val('English');
+				}
+					alimenteCarte(pays, lang);
+			}); //fin jQuery
+
+
+				
+			function alimenteCarte(data, lang){
+			$('#carte').children().remove(); // supprime tous les éventuels descendant du div carte
+				var nomEN = "";
+				var nomFR = "";
+				var top = 0;
+				var left = 0;
+				var html = "";
+				for(i=0;i<data.length;i++){
+					nomEN = data[i][0];
+					nomFR = data[i][1];
+					top = Number(data[i][2]) + 110;
+					left = Number(data[i][3]) + 8;
+					html = '<a href="#" ';
+					html += ' style=\'top:'+top+'px; left:'+left+'px;\'>';
+					if(lang == 'fr'){
+						html += nomFR;
+					}else{
+						html += nomEN;
+					}
+					html += '</a>';
+					$('#carte').append(html);
+				}
+			}// #jQuery
+		</script>
+	</body>
+ </html>
